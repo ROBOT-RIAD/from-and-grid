@@ -44,9 +44,10 @@ const Forms = () => {
           <Formik 
           initialValues={FormData}
           validate={validate}
-          onSubmit={(values)=>{
+          onSubmit={(values,{resetForm})=>{ //use reserForm
             console.log(values);
             setFormData(values);
+            resetForm();
           }}
           >
             {({values ,handleChange,handleSubmit,errors}) => (
